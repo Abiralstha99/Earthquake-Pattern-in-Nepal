@@ -20,17 +20,19 @@ A magnitude histogram will also describe the distribution of earthquake sizes in
 
 ## Study scope
 
-Resolve these choices before downloading the final dataset. They are not specified in the pitch.
+The study period and minimum magnitude come from the filtered earthquake dataset.
 
-- **Study period:** Choose explicit start and end dates that include years before and after 2015.
+- The **study period** runs from May 28, 1951, through November 11, 2026 (UTC), the dates of the oldest and newest recorded earthquakes in the filtered dataset.
+- The **minimum magnitude** is 3.0, the lowest recorded magnitude in the filtered dataset.
 - **Geographic boundary:** Decide whether the study covers Nepal's national boundary or a wider surrounding region. A rectangular search area may include neighboring countries.
-- **Minimum magnitude:** Choose and document a consistent threshold, considering catalog coverage over the study period.
 - **2015 comparison:** Define the before/after windows and the geographic area used to examine the Gorkha sequence.
 - **Season definitions:** If comparing seasons, define their months explicitly.
 
 ## Data
 
 Download a CSV from the USGS Earthquake Catalog and preserve an unchanged copy in `data/raw/`.
+
+Use `data/processed/earthquakes.csv` as the shared input for the analysis notebooks. Run `notebooks/datapreprocessing.ipynb` to regenerate and verify it. The `year`, `month`, `day`, and `time_of_day` columns are in UTC.
 
 | Field | Purpose |
 | --- | --- |
@@ -50,6 +52,7 @@ Record the download date, exact search filters or query URL, source, and origina
 ├── README.md
 ├── data/
 │   ├── raw/            # Original catalog downloads
+│   └── processed/      # Validated CSV for analysis
 ├── docs/               # Scope decisions, data notes, and methodology
 ├── notebooks/          # Python notebooks for cleaning and analysis
 ```
