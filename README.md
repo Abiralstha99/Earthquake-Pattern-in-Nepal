@@ -32,7 +32,9 @@ The study period and minimum magnitude come from the filtered earthquake dataset
 
 Download a CSV from the USGS Earthquake Catalog and preserve an unchanged copy in `data/raw/`.
 
-Use `data/processed/earthquakes.csv` as the shared input for the analysis notebooks. Run `notebooks/datapreprocessing.ipynb` to regenerate and verify it. The `year`, `month`, `day`, and `time_of_day` columns are in UTC.
+Use `data/processed/cleaned.csv` as the input for the analysis notebook. Run `notebooks/datapreprocessing.ipynb` to regenerate and verify it. The `year`, `month`, `day`, and `time_of_day` columns are in UTC.
+
+Run [the analysis notebook](notebooks/dataAnalysis.ipynb) to see the magnitude–depth scatterplot, Pearson correlation, and magnitude histogram.
 
 | Field | Purpose |
 | --- | --- |
